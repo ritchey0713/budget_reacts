@@ -1,6 +1,7 @@
 import React from 'react'
 
-const edit = () => {
+const edit = (props) => {
+  console.log(props)
   return (
     <div>
       Edit
