@@ -4,7 +4,7 @@ const edit = (props) => {
   console.log(props)
   return (
     <div>
-      Edit
+      Editing expense with an id of {props.match.params.id}
     </div>
   )
 }
