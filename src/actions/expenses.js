@@ -5,8 +5,8 @@ export const addExpense = (
   { 
     description = "", 
     note = "", 
-    amount = "0", 
-    createdAt = "0"
+    amount = 0, 
+    createdAt = 0
   } = {}
 ) => {
   return {
