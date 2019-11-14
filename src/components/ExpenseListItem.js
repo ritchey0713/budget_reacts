@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { removeExpense } from "../actions/expenses"
 import { connect } from 'react-redux'
 // const ExpenseListItem = (props) => (
@@ -34,6 +35,12 @@ const ExpenseListItem = ({ id, description, amount, createdAt, dispatch }) => (
     </button>
   </div>
 )
+
+ExpenseListItem.propTypes = {
+  description: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  createdAt: PropTypes.string.isRequired
+}
 
 
 
