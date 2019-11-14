@@ -14,8 +14,8 @@ import "./styles/styles.scss"
 const store = configureStore();
 
 store.dispatch(addExpense({ description: "water bill", amount:-100 }))
-store.dispatch(addExpense({ description: "daycare", amount:10000, createdAt: "10000" }))
-store.dispatch(addExpense({ description: "rent", amount:20000000, createdAt: "-10000" }))
+store.dispatch(addExpense({ description: "daycare", amount:299999, createdAt: 10000 }))
+store.dispatch(addExpense({ description: "rent", amount:20000000, createdAt: -10000 }))
 
 console.log(getVisibleExpenses(store.getState().expenses, store.getState().filters))
 
