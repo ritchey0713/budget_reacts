@@ -1,10 +1,11 @@
 import React from "react" 
-
+import ExpenseForm from "./ExpenseForm"
 
 const create = () => {
   return (
     <div>
-      new budget!
+      <h1>Add new budget</h1>
+      <ExpenseForm />
     </div>
   )
 }
