@@ -39,7 +39,7 @@ const ExpenseListItem = ({ id, description, amount, createdAt, dispatch }) => (
 ExpenseListItem.propTypes = {
   description: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
-  createdAt: PropTypes.string.isRequired
+  createdAt: PropTypes.number.isRequired
 }
 
 
