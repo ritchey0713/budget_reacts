@@ -5,7 +5,11 @@ const create = () => {
   return (
     <div>
       <h1>Add new budget</h1>
-      <ExpenseForm />
+      <ExpenseForm
+        onSubmit={(expense) => {
+          console.log(expense)
+        }}
+      />
     </div>
   )
 }
