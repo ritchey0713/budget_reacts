@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { connect } from 'react-redux'
 import ExpenseListItem from "./ExpenseListItem"
 import selectExpenses from "../selectors/expenses"
@@ -24,6 +25,10 @@ const mapStateToProps = (state, ownProps) => {
   return {
     expenses: selectExpenses(state.expenses, state.filters)
   }
+}
+
+ExpenseList.propTypes = {
+  expenses: PropTypes.array.isRequired,
 }
 
 export default connect(mapStateToProps)(ExpenseList)
