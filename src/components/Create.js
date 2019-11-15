@@ -8,9 +8,10 @@ const CreateExpense = (props) => {
     <div>
       <h1>Add new budget</h1>
       <ExpenseForm
-        onSubmit={(expense) => {
+        reduxOnSubmit={(expense) => {
           console.log(expense)
           props.dispatch(addExpense(expense))
+          props.history.push("/")
         }}
       />
     </div>
