@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { removeExpense } from "../actions/expenses"
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 // const ExpenseListItem = (props) => (
 //   <div>
 //     <h3>
@@ -17,7 +18,7 @@ import { connect } from 'react-redux'
 const ExpenseListItem = ({ id, description, amount, createdAt, dispatch }) => (
   <div>
     <h3>
-      DESC: {description}  
+      <Link to={`/edit/${id}`}>DESC: {description}  </Link>
     </h3>
 
     <p>
