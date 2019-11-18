@@ -3,3 +3,4 @@ public/bundle.js
 package-lock.json
 src/playground
 yarn.lock
+src/firebase/firebaseSecrets.js
