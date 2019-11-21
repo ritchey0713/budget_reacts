@@ -54,7 +54,7 @@ export const editExpense = (id, updates) => {
 
 export const startEditExpense = (id, updates) => {
   return (dispatch) => {
-    database.ref(`expenses/${id}`).update({
+    return database.ref(`expenses/${id}`).update({
       ...updates
     })
     .then(() => {
