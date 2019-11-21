@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from "react-redux"
 import AppRouter from './routers/AppRouter'
 import configureStore from "./store/configureStore"
-import { addExpense, removeExpense, editExpense } from "./actions/expenses"
+import { startSetExpenses } from "./actions/expenses"
 import {  setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "./actions/filters"
 import getVisibleExpenses from "./selectors/expenses"
 import "./firebase/firebase"
@@ -18,11 +18,6 @@ const store = configureStore();
 // store.dispatch(addExpense({ description: "daycare", amount:299999, createdAt: 10000 }))
 // store.dispatch(addExpense({ description: "rent", amount:20000000, createdAt: -10000 }))
 
-console.log(getVisibleExpenses(store.getState().expenses, store.getState().filters))
-
-
-
-
 const app = document.getElementById("app")
 
 const jsx = (
@@ -31,4 +26,10 @@ const jsx = (
   </Provider>
 )
 
-ReactDOM.render(jsx, app)
+ReactDOM.render(<p>loading...</p>, app)
+
+store.dispatch(startSetExpenses())
+  .then(()=> {
+    ReactDOM.render(jsx, app)
+  })
+
