@@ -12,7 +12,7 @@ const ExpenseList = (props) => {
         return (
           <ExpenseListItem
             {...expense}
-            key={expense.id}
+            key={expense.id || "test-key"}
           />
          
         ) 
