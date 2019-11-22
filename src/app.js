@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from 'react-dom'
 import { Provider } from "react-redux"
-import AppRouter from './routers/AppRouter'
+import AppRouter, { history } from './routers/AppRouter'
 import configureStore from "./store/configureStore"
 import { startSetExpenses } from "./actions/expenses"
 import {  setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "./actions/filters"
@@ -35,9 +35,9 @@ store.dispatch(startSetExpenses())
 
 firebase.auth().onAuthStateChanged((user) => {
   if(user){
-    console.log("logged in")
+    // console.log("logged in")
   }
   else {
-    console.log("logged out")
+    history.push("/")
   }
 })
