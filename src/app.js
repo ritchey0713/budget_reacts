@@ -6,7 +6,7 @@ import configureStore from "./store/configureStore"
 import { startSetExpenses } from "./actions/expenses"
 import {  setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "./actions/filters"
 import getVisibleExpenses from "./selectors/expenses"
-import "./firebase/firebase"
+import { firebase } from "./firebase/firebase"
 
 import "normalize.css/normalize.css";
 import "./styles/styles.scss"
@@ -33,3 +33,11 @@ store.dispatch(startSetExpenses())
     ReactDOM.render(jsx, app)
   })
 
+firebase.auth().onAuthStateChanged((user) => {
+  if(user){
+    console.log("logged in")
+  }
+  else {
+    console.log("logged out")
+  }
+})
