@@ -1,6 +1,6 @@
 import React from "react"
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
-
+import { Router, Route, Switch, Link, NavLink } from 'react-router-dom'
+import createHistory from "history/createBrowserHistory"
 import Header from "../components/Header.js"
 import DashBoard from "../components/DashBoard"
 import Create from "../components/Create"
@@ -9,9 +9,11 @@ import Help from "../components/Help"
 import NotFound from "../components/NotFound"
 import Login from "../components/LoginPage"
 
+export const history = createHistory()
+
 const appRouter = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
     <div>
       <Header/>
       <Switch>
@@ -23,7 +25,7 @@ const appRouter = () => {
         <Route  component={NotFound}/>
       </Switch>
     </div>  
-  </BrowserRouter>
+  </Router>
   )
 }
 
