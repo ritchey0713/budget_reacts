@@ -11,7 +11,6 @@ const Header = (props) => {
         <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink> | 
         <NavLink to="/dashboard" activeClassName="is-active">Dashboard</NavLink> | 
         <NavLink to="/create" activeClassName="is-active">new</NavLink> | 
-        <NavLink to="/edit" activeClassName="is-active">edit</NavLink> | 
         <NavLink to="/help" activeClassName="is-active">Help</NavLink> | 
         <button
           onClick={props.startLogout}
