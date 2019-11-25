@@ -7,4 +7,8 @@ const dataBase = firebase.database()
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider() 
 
+googleAuthProvider.setCustomParameters({
+  "prompt": "select_account"
+})
+
 export { firebase, googleAuthProvider, dataBase as default };
