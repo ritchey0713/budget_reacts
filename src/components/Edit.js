@@ -6,22 +6,31 @@ import { startEditExpense, startRemoveExpense } from '../actions/expenses'
 const EditExpense = (props) => {
   return (
     <div>
-      Editing expense with an id of {props.match.params.id}
-      <ExpenseForm 
-        expense={props.expense}
-        reduxOnSubmit={(expense) => {
-          props.dispatch(startEditExpense(props.expense.id, expense))
+      <div className="page-header">
+        <div className="content-container">
+        <h1 className="page-header__title">Editing: {props.expense.description}</h1>
+        </div>
+      </div>
+      <div className="content-container">
+        <ExpenseForm 
+          expense={props.expense}
+          reduxOnSubmit={(expense) => {
+            props.dispatch(startEditExpense(props.expense.id, expense))
+            props.history.push("/")
+            }
+          }
+        />
+        <button 
+          className="button button--secondary"
+          onClick={(e) => {
+          props.dispatch(startRemoveExpense(props.expense))
           props.history.push("/")
-        }
-          
-        }
-      />
-      <button onClick={(e) => {
-        props.dispatch(startRemoveExpense(props.expense))
-        props.history.push("/")
-      }}>
-      remove
-    </button>
+          }}>
+          remove
+        </button>
+      </div>
+
+      
     </div>
   )
 }
