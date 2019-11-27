@@ -12,6 +12,7 @@ const Header = (props) => {
             <h1>Budget Reacts!</h1>
           </Link> 
           <button
+            className="button button--link"
             onClick={props.startLogout}
           >Log out</button>
         </div>
