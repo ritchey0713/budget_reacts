@@ -16,9 +16,11 @@ export class CreateExpense extends React.Component {
             <h1 className="page-header__title">Add new budget</h1>
           </div>
         </div>
-        <ExpenseForm
-          reduxOnSubmit={this.reduxOnSubmit}
-        />
+        <div className="content-container">
+          <ExpenseForm
+            reduxOnSubmit={this.reduxOnSubmit}
+          />
+        </div>
       </div>
     )
   } 
