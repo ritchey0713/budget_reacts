@@ -10,7 +10,7 @@ const Login = ({ startLogin }) => {
         <p>Budget your expenses!</p>
         <button
           onClick={startLogin}
-          className="login-button"
+          className="button"
         >
           Login with Google!
         </button>
