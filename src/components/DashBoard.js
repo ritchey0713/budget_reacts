@@ -1,12 +1,12 @@
 import React from "react"
 import ExpenseList from "./ExpenseList"
 import ExpenseListFilters from "./ExpenseListFilters"
-import { connect } from 'react-redux'
+import ExpenseSummary from "./ExpenseSummary"
 
 const dashBoard = () => {
   return (
     <div>
-      this is the dashboard
+      <ExpenseSummary />
       <ExpenseListFilters/>
       <ExpenseList />
     </div>
