@@ -105,6 +105,7 @@ export default class ExpenseForm extends React.Component {
             onFocusChange={this.onFocusChange}
             numberOfMonths={1}
             isOutsideRange={(day) => {false}}
+            block
           />
           <textarea
             className="text-area"
@@ -113,7 +114,9 @@ export default class ExpenseForm extends React.Component {
             onChange={this.onNoteChange}
           >
           </textarea>
-          <button>Submit</button>
+          <div>
+            <button className="button">Submit</button>
+          </div>
         </form>
     )
   }
