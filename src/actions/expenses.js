@@ -40,9 +40,11 @@ export const removeExpense = (id) => {
 export const startRemoveExpense = ({ id } = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
-    return database.ref(`/users/${uid}expenses/${id}`).remove()
+    return database.ref(`/users/${uid}/expenses/${id}`).remove()
     .then(() => {
       dispatch(removeExpense(id))
+    }).catch((e) => {
+      console.log(e, "ERROR")
     })
   }
 }
