@@ -26,7 +26,7 @@ const EditExpense = (props) => {
           props.dispatch(startRemoveExpense(props.expense))
           props.history.push("/")
           }}>
-          remove
+          Remove
         </button>
       </div>
 
