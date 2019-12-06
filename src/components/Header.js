@@ -21,10 +21,14 @@ const Header = (props) => {
   )
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    startLogout: () => dispatch(startLogout())
-  }
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   return {
+//     startLogout: () => dispatch(startLogout())
+//   }
+// }
+
+const mapDispatchToProps = {
+  startLogout
 }
 
 export default connect(undefined, mapDispatchToProps)(Header)
