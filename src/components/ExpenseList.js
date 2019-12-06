@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { connect } from 'react-redux'
 import ExpenseListItem from "./ExpenseListItem"
 import selectExpenses from "../selectors/expenses"
+
 const ExpenseList = (props) => {
   return (
     <div className="content-container">
