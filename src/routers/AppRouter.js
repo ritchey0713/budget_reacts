@@ -1,6 +1,7 @@
 import React from "react"
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom'
-import createHistory from "history/createBrowserHistory"
+import { createBrowserHistory } from "history";
+ 
 
 import DashBoard from "../components/DashBoard"
 import Create from "../components/Create"
@@ -11,7 +12,11 @@ import Login from "../components/LoginPage"
 import PrivateRoute from "./PrivateRoute"
 import PublicRoute from "./PublicRoute"
  
-export const history = createHistory()
+export const history = createBrowserHistory();
+
+
+
+
 
 const appRouter = () => {
   return (
