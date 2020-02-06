@@ -2,6 +2,7 @@ import * as firebase from "firebase"
 // import firebaseConfig from "./firebaseSecrets"
 
 
+console.log(process.env)
 
 firebase.initializeApp({
   apiKey: process.env.APIKEY,
