@@ -6,7 +6,7 @@ import * as firebase from "firebase"
 firebase.initializeApp({
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
-  databaseURL: process.env.DATABASEURL,
+  databaseURL: process.env.DATA_BASE_URL,
   projectId: process.env.PROJECTID,
   storageBucket: process.env.STORAGEBUCKET,
   messagingSenderId: process.env.MESSAGINGSENDERID,
