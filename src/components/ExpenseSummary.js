@@ -8,7 +8,6 @@ import selectExpensesTotal from "../selectors/expenses-total"
 export const ExpensesSummary = (props) => {
   const expenseWord = props.expensesCount === 1 ? "expense" : "expenses";
   const formattedExpensesTotal = numeral(props.expensesTotal / 100).format("$0,0.00");
-  console.log(formattedExpensesTotal)
   
   return (
     <div className="page-header">
