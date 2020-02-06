@@ -1,7 +1,22 @@
 import * as firebase from "firebase"
-import firebaseConfig from "./firebaseSecrets"
+import firebaseConfig from "./firebaseSecrets";
+// import FirebaseConfig from "./firebaseSecrets"
 
-firebase.initializeApp(firebaseConfig);
+
+
+firebase.initializeApp({
+    apiKey: ENV['APIKEY'],
+  authDomain: ENV['AUTHDOMAIN'],
+  databaseURL: ENV['DATABASEURL'],
+  projectId: ENV["PROJECTID"],
+  storageBucket: ENV['STORAGEBUCKET'],
+  messagingSenderId: ENV['MESSAGINGSENDERID'],
+  appId: ENV['APPID'],
+  measurementId: ENV['MEASUREMENTID']
+});
+
+
+// firebase.initializeApp(firebaseConfig);  local init
 
 const dataBase = firebase.database()
 
