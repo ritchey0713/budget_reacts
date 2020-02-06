@@ -12,8 +12,6 @@ const config = {
   measurementId: process.env.MEASUREMENTID
 }
 
-console.log(config)
-
 firebase.initializeApp(config);
 
 // local init
