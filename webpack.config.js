@@ -51,7 +51,7 @@ module.exports = (env) => {
       "process.env.DATABASEURL" : JSON.stringify(process.env.DATABASEURL),
       "process.env.PROJECTID" : JSON.stringify(process.env.PROJECTID),
       "process.env.STORAGEBUCKET" : JSON.stringify(process.env.STORAGEBUCKET),
-      "process.env.MESSAGINGSTORAGEID" : JSON.stringify(process.env.MESSAGINGSTOREAGEID),
+      "process.env.MESSAGINGSTORAGEID" : JSON.stringify(process.env.MESSAGINGSTORAGEID),
       "process.env.APPID" : JSON.stringify(process.env.APPID),
       "process.env.MEASUREMENTID" : JSON.stringify(process.env.MEASUREMENTID)
     })
