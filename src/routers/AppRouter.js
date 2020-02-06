@@ -12,21 +12,17 @@ import Login from "../components/LoginPage"
 import PrivateRoute from "./PrivateRoute"
 import PublicRoute from "./PublicRoute"
  
-export const history = createBrowserHistory();
-
-
-
-
+const history = createBrowserHistory();
 
 const appRouter = () => {
   return (
     <Router history={history}>
     <div>
       <Switch>
-        <PublicRoute path="/" component={Login} exact={true}/>
+        <PublicRoute path="/" component={Login} exact={true} />
         <PrivateRoute path="/dashboard" component={DashBoard} />
-        <PrivateRoute path="/create" component={Create}/>
-        <PrivateRoute path="/edit/:id" component={Edit}/>
+        <PrivateRoute path="/create" component={Create} />
+        <PrivateRoute path="/edit/:id" component={Edit} />
         <Route path="/help" component={Help}/>
         <Route  component={NotFound}/>
       </Switch>
@@ -34,6 +30,5 @@ const appRouter = () => {
   </Router>
   )
 }
-
 
 export default appRouter

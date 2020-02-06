@@ -37,7 +37,7 @@ const jsx = (
   </Provider>
 )
 
-ReactDOM.render(<LoadingPage />, app)
+
 
 firebase.auth().onAuthStateChanged((user) => {
   if(user){

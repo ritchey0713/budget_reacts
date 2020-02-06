@@ -22,6 +22,4 @@ ExpenseListItem.propTypes = {
   createdAt: PropTypes.number.isRequired
 }
 
-
-
 export default ExpenseListItem
