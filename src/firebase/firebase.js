@@ -1,5 +1,5 @@
 import * as firebase from "firebase"
-import firebaseConfig from "./firebaseSecrets"
+// import firebaseConfig from "./firebaseSecrets"
 
 
 
