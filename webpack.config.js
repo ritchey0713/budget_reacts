@@ -3,7 +3,9 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-
+if(process.env.NODE_ENV === 'development') {
+  require("dotenv").config({ path: ".env.development" })
+}
 
 module.exports = (env) => {
 
@@ -42,7 +44,18 @@ module.exports = (env) => {
     }]
   },
   plugins: [
-    CSSExtract
+    CSSExtract,
+    new webpack.DefinePlugin({
+      "process.env.APIKEY" : JSON.stringify(process.env.APIKEY),
+      "process.env.AUTHDOMAIN" : JSON.stringify(process.env.AUTHDOMAIN),
+      "process.env.DATABASEURL" : JSON.stringify(process.env.DATABASEURL),
+      "process.env.PROJECTID" : JSON.stringify(process.env.PROJECTID),
+      "process.env.STORAGEBUCKET" : JSON.stringify(process.env.STORAGEBUCKET),
+      "process.env.MESSAGINGSTORAGEID" : JSON.stringify(process.env.MESSAGINGSTOREAGEID),
+      "process.env.APPID" : JSON.stringify(process.env.APPID),
+      "process.env.MEASUREMENTID" : JSON.stringify(process.env.MEASUREMENTID)
+    })
+    
   ],
   devtool: isProduction ? "source-map" : "inline-source-map",
   devServer: {

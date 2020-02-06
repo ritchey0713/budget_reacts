@@ -7,4 +7,4 @@ package-lock.json
 src/playground
 yarn.lock
 src/firebase/firebaseSecrets.js
-.env.production
+.env.development
