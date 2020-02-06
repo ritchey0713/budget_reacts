@@ -3,20 +3,20 @@ import firebaseConfig from "./firebaseSecrets"
 
 
 
-// firebase.initializeApp({
-//     apiKey: ENV['APIKEY'],
-//   authDomain: ENV['AUTHDOMAIN'],
-//   databaseURL: ENV['DATABASEURL'],
-//   projectId: ENV["PROJECTID"],
-//   storageBucket: ENV['STORAGEBUCKET'],
-//   messagingSenderId: ENV['MESSAGINGSENDERID'],
-//   appId: ENV['APPID'],
-//   measurementId: ENV['MEASUREMENTID']
-// });
+firebase.initializeApp({
+    apiKey: ENV['APIKEY'],
+  authDomain: ENV['AUTHDOMAIN'],
+  databaseURL: ENV['DATABASEURL'],
+  projectId: ENV["PROJECTID"],
+  storageBucket: ENV['STORAGEBUCKET'],
+  messagingSenderId: ENV['MESSAGINGSENDERID'],
+  appId: ENV['APPID'],
+  measurementId: ENV['MEASUREMENTID']
+});
 
 
 // local init
-firebase.initializeApp(firebaseConfig);  
+// firebase.initializeApp(firebaseConfig);  
 
 const dataBase = firebase.database()
 
