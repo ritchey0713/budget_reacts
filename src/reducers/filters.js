@@ -21,6 +21,7 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
         return {
           ...state,
           sortBy: action.text
+          // sortBy: "amount"
         }  
 
     case "SET_SORT_BY_DATE":
