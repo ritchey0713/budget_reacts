@@ -21,11 +21,12 @@ test("Should generate set end date action object", () => {
 })
 
 test("Should generate set text action object with provided text", () => {
-  const action = setTextFilter("Hello world!")
+  const text = "Hello world!"
+  const action = setTextFilter(text)
 
   expect(action).toEqual({
     type: "SET_TEXT_FILTER",
-    text: "Hello world!"
+    text
   })
 })
 
