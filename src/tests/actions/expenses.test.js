@@ -20,3 +20,28 @@ test("Should set up edit expense action object", () => {
     }
   })
 })
+
+test("Should set up addExpense action object with provided values", () => {
+  const expenseData = {
+    description: "rent",
+    amount: 10000,
+    createdAt: 1000,
+    note: "last month rent"
+  }
+
+  const action = addExpense(expenseData)
+  expect(action).toEqual({
+    type: "ADD_EXPENSE",
+    expense: {
+      ...expenseData,
+    }
+  })
+})
+
+test("should use default values to setup action object", () => {
+  const action = addExpense()
+
+  expect(action).toEqual({
+    ...action
+  })
+})
