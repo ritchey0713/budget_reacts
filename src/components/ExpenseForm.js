@@ -68,7 +68,6 @@ export default class ExpenseForm extends React.Component {
           error: ""
         }
       })
-      console.log("saved!")
       this.props.reduxOnSubmit({ 
         description: this.state.description, 
         createdAt: this.state.createdAt.valueOf(), 
