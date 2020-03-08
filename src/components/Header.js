@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { startLogout } from "../actions/auth"
 import { connect } from 'react-redux'
 
-const Header = (props) => {
+export const Header = (props) => {
   return (
     <header className="header">
       <div className="content-container">
