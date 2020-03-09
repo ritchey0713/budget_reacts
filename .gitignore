@@ -8,3 +8,4 @@ src/playground
 yarn.lock
 src/firebase/firebaseSecrets.js
 .env.development
+.env.test.2
