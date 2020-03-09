@@ -3,7 +3,7 @@ import { shallow } from "enzyme"
 import {ExpenseListFilters } from "../../components/ExpenseListFilters"
 import { filters, altFilters } from "../fixtures/filters"
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate
+let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper
 
 beforeEach(() => {
   setTextFilter = jest.fn();
@@ -23,5 +23,12 @@ beforeEach(() => {
 })
 
 test("Should render expense list filters", () => {
+  expect(wrapper).toMatchSnapshot()
+})
+
+test("Should render expense list filters with alt filters data", () => {
+  wrapper.setProps({
+    filters: altFilters
+  })
   expect(wrapper).toMatchSnapshot()
 })

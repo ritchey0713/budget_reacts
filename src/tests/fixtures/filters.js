@@ -1,14 +1,14 @@
 import moment from 'moment'
 
 const filters = {
-  test: "",
+  text: "",
   sortBy: "date",
   startDate: undefined,
   endDate: undefined
 }
 
 const altFilters = {
-  test: "e",
+  text: "e",
   sortBy: "amount",
   startDate: moment(0),
   endDate: moment(0).add(3, "days")
