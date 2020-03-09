@@ -10,7 +10,7 @@ test("Should generate login action object", () => {
   })
 })
 
-test("shouls create log out action object", () => {
+test("should create log out action object", () => {
   const action = logout()
   expect(action).toEqual({
     type: "LOGOUT"

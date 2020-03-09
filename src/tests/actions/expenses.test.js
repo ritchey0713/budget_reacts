@@ -4,10 +4,18 @@ import configureMockStore from "redux-mock-store"
 import thunk from "redux-thunk"
 import database from "../../firebase/firebase"
 
-// const uid = "testuidR"
+const uid = "testuidR"
 
-// const defaultAuthState = {auth: { uid }}
+const defaultAuthState = {auth: { uid }}
 const createMockStore = configureMockStore([thunk])
+
+beforeEach((done) => {
+  const expensesData = {}
+  expenses.forEach(({id, description, note, amount, createdAt}) => {
+    expensesData[id] = { description, note, amount, createdAt }
+  })
+  database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done())
+})
 
 
 test("Should set up remove expense action object", () => {
@@ -49,7 +57,7 @@ test("Should set up addExpense action object with provided values", () => {
 // })
 
 test("should add expense to db and store", (done) => {
-  const store = createMockStore({})
+  const store = createMockStore(defaultAuthState)
   const expenseData = {
     description: "Mouse",
     amount: 3000,
@@ -65,7 +73,7 @@ test("should add expense to db and store", (done) => {
         ...expenseData
       }
     })
-    return database.ref(`expenses/${actions[0].expense.id}`).once("value")
+    return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once("value")
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(expenseData)
     done()
@@ -73,5 +81,25 @@ test("should add expense to db and store", (done) => {
 })
 
 test("should add expense with default values to db and store", () => {
-  
+  const store = createMockStore(defaultAuthState)
+  const defaultExpense = {
+    description: "", 
+        note: "", 
+        amount: 0, 
+        createdAt: 0
+  }
+  store.dispatch(startAddExpense()).then(() => {
+    const actions = store.getActions()
+    expect(actions[0]).toEqual({
+      type: "ADD_EXPENSE",
+      expense: {
+        id: expect.any(String),
+        ...defaultExpense
+      }
+    })
+    return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once("value")
+  }).then((snapshot) => {
+    expect(snapshot.val()).toEqual(defaultExpense)
+    done()
+  })
 })
