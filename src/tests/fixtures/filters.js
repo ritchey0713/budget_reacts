@@ -10,6 +10,8 @@ const filters = {
 const altFilters = {
   test: "e",
   sortBy: "amount",
-  startDate: undefined,
-  endDate: undefined
+  startDate: moment(0),
+  endDate: moment(0).add(3, "days")
 }
+
+export { filters, altFilters }
